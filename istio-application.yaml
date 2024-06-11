@@ -9,6 +9,11 @@ spec:
     repoURL: 'https://github.com/ibuildthecloud/istio-gh.git'
     targetRevision: HEAD
     path: .
+    helm:
+      valueFiles:
+        - values.yaml
+      chart: istio
+      repoURL: https://istio-release.storage.googleapis.com/charts
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: istio-system
