@@ -1,2 +1,21 @@
-# Istio Helm values file
-# Add your custom Istio configuration here
+global:
+  istioNamespace: istio-system
+  proxy:
+    autoInject: enabled
+  controlPlaneSecurityEnabled: true
+  mtls:
+    enabled: true
+
+pilot:
+  enabled: true
+
+ingressGateways:
+  - name: istio-ingressgateway
+    enabled: true
+
+egressGateways:
+  - name: istio-egressgateway
+    enabled: true
+
+sidecarInjectorWebhook:
+  enabled: true
